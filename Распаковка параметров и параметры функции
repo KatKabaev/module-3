@@ -1,1 +1,34 @@
+#Функции с параметрами по умолчанию:
+def print_params(a=1, b='строка', c=True):
+    print(a, b, c)
 
+
+print_params()
+print_params(b=25)
+print_params(c=[1,2,3])
+
+
+def print_params(*args):
+    print(*args)
+
+
+print_params(1, "строка", True, 5)
+print_params(1, "строка")
+print_params()
+
+
+#Распаковка параметров:
+def print_params(a=1, b='строка', c=True):
+    print(a, b, c)
+
+
+values_list = [1, 'строка', True]
+values_dict = {'a': 1, 'b': 'строка', 'c': True}
+
+print_params(*values_list)
+print_params(**values_dict)
+
+#Распаковка + отдельные параметры:
+values_list_2 = [1, 'строка']
+
+print_params(*values_list_2, 42)
